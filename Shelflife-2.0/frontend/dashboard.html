@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShelfLife | Dashboard</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- Icons (Professional UI) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="app-body">
+
+<main class="dashboard-shell" role="main">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-mark">
+                <img src="../assets/logo.svg" alt="ShelfLife logo">
+            </div>
+            <div>
+                <p class="brand-kicker">Food Expiry Manager</p>
+                <p class="brand-name">ShelfLife</p>
+                    <p class="brand-tagline">ShelfLife: Freshness Tracked, Savings Stacked.</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="/dashboard/" class="sidebar-link active">
+                <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+                <span>Dashboard</span>
+            </a>
+            <a href="/pantry/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-boxes-stacked"></i></span>
+                <span>Pantry</span>
+            </a>
+            <a href="/utilization/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-wallet"></i></span>
+                <span>Financial Impact</span>
+            </a>
+            <a href="/consumption-summary/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-chart-pie"></i></span>
+                <span>Consumption</span>
+            </a>
+            <a href="/research-guide/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-book-open"></i></span>
+                <span>Smart Storage Guide</span>
+            </a>
+            <a href="/add-item/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-plus"></i></span>
+                <span>Add Item</span>
+            </a>
+            <a href="/notifications/" class="sidebar-link">
+                <span class="nav-icon"><i class="fas fa-bell"></i></span>
+                <span>Notifications</span>
+            </a>
+        </nav>
+
+        <!-- PROFILE -->
+        <div class="profile-panel">
+            <button class="sidebar-user-card profile-toggle" type="button" data-profile-toggle>
+                <span class="user-avatar" data-user-avatar>SL</span>
+                <div class="profile-meta">
+                    <strong data-user-name>Signed In</strong>
+                </div>
+                <span class="profile-caret"><i class="fas fa-chevron-right"></i></span>
+            </button>
+
+            <div class="profile-dropdown" data-profile-dropdown>
+                <div class="profile-dropdown-header">
+                    <span class="profile-dropdown-name" data-user-name></span>
+                </div>
+                <button type="button" class="profile-dropdown-item profile-link" data-profile-link>
+                    <i class="fas fa-user-circle"></i>
+                    Profile
+                </button>
+                <button type="button" class="profile-dropdown-item" data-logout-link>
+                    <i class="fas fa-right-from-bracket"></i>
+                    Logout
+                </button>
+                <button class="profile-dropdown-item danger" type="button" data-delete-account>
+                    <i class="fas fa-trash"></i>
+                    Delete Account
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-area">
+
+        <!-- TOPBAR -->
+        <div class="content-topbar">
+            <div class="topbar-intro">
+                <p class="section-tag">Overview</p>
+                <h1 class="content-title">Dashboard</h1>
+                <p class="topbar-copy">
+                    Monitor your pantry with smart expiry tracking and real-time status indicators.
+                </p>
+            </div>
+
+            <div class="topbar-actions">
+                <a href="/add-item/" class="primary-btn">
+                    <i class="fas fa-plus"></i> Add Item
+                </a>
+            </div>
+        </div>
+
+        <!-- MESSAGE -->
+        <div id="dashboard-message" class="message" aria-live="polite"></div>
+
+        <!-- STATS -->
+        <section class="stats-row">
+            <article class="metric-card">
+                <span class="metric-icon neutral-dot"></span>
+                <p>Total Items</p>
+                <strong data-metric="total">--</strong>
+            </article>
+
+            <article class="metric-card">
+                <span class="metric-icon fresh-dot"></span>
+                <p>Fresh</p>
+                <strong class="fresh-text" data-metric="fresh">--</strong>
+            </article>
+
+            <article class="metric-card">
+                <span class="metric-icon warning-dot"></span>
+                <p>Expiring Soon</p>
+                <strong class="warning-text" data-metric="expiring_soon">--</strong>
+            </article>
+
+            <article class="metric-card">
+                <span class="metric-icon danger-dot"></span>
+                <p>Expired</p>
+                <strong class="danger-text" data-metric="expired">--</strong>
+            </article>
+        </section>
+
+        <section class="status-legend" aria-label="Status legend">
+            <div class="legend-pill fresh">Fresh (4+ days)</div>
+            <div class="legend-pill expiring_soon">Expiring Soon (2-3 days)</div>
+            <div class="legend-pill expiring_critical">Today / Tomorrow</div>
+            <div class="legend-pill expired">Expired</div>
+        </section>
+
+        <section class="content-card overview-actions">
+            <div class="table-header">
+                <div>
+                    <h2 class="section-heading">Instant access</h2>
+                    <p class="page-copy">Jump directly into the areas that support your pantry routine.</p>
+                </div>
+                <a href="/utilization/" class="secondary-btn">See financial tracking</a>
+            </div>
+            <div class="overview-actions-grid">
+                <a href="/pantry/" class="overview-card">
+                    <span class="overview-card-icon">📦</span>
+                    <strong>Pantry ledger</strong>
+                    <p>Review every item, edit quantities, and delete unwanted stock.</p>
+                </a>
+                <a href="/consumption-summary/" class="overview-card">
+                    <span class="overview-card-icon">📊</span>
+                    <strong>Consumption summary</strong>
+                    <p>See how many items you consumed, wasted, and read-but-not-consumed.</p>
+                </a>
+                <a href="/research-guide/" class="overview-card">
+                    <span class="overview-card-icon">📘</span>
+                    <strong>Food saving tips</strong>
+                    <p>Apply research-backed guidance for planning, cooking, and waste tracking.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- INVENTORY TABLE -->
+        <section class="content-card activity-card">
+            <div class="table-header">
+                <div>
+                    <h2 class="section-heading">Inventory Status</h2>
+                    <p class="page-copy">
+                        Items are sorted by nearest expiry with clear visual indicators.
+                    </p>
+                </div>
+                <div>
+                    <a href="/pantry/" class="secondary-btn">
+                        View All
+                    </a>
+                </div>
+            </div>
+
+            <div class="inventory-table-wrapper">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Category</th>
+                            <th>Expiry</th>
+                            <th>Days Left</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inventory-table-body">
+
+                        <!-- LOADING STATE -->
+                        <tr id="loading-row">
+                            <td colspan="7" style="text-align:center; padding: 30px;">
+                                Loading items...
+                            </td>
+                        </tr>
+
+                        <!-- EMPTY STATE -->
+                        <tr class="empty-table-row" hidden>
+                            <td colspan="7" style="text-align: center; padding: 40px;">
+                                <img src="../assets/empty-box.svg" alt="Empty pantry" style="width: 60px; opacity: 0.5; margin-bottom: 15px;">
+                                <p style="color: #999;">
+                                    No pantry items yet.<br>
+                                    <strong>Add your first item to get started 🚀</strong>
+                                </p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            </section>
+
+    </section>
+</main>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>
