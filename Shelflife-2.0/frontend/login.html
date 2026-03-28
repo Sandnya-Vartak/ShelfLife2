@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShelfLife | Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body class="auth-body">
+    <main class="auth-layout">
+        <section class="auth-panel auth-brand-panel">
+            <div class="brand-mark large-mark">
+                <img src="../assets/logo.svg" alt="ShelfLife logo">
+            </div>
+            <p class="section-tag">Welcome Back</p>
+            <h1 class="page-title">Sign in and pick up where you left off</h1>
+            <p class="page-copy">Open the dashboards that keep your groceries tracked, your alerts fresh, and your meals planned.</p>
+            <div class="auth-feature-list">
+                <div class="auth-feature-card">
+                    <span class="auth-feature-dot"></span>
+                    <span>Review pantry status from one dashboard</span>
+                </div>
+                <div class="auth-feature-card">
+                    <span class="auth-feature-dot"></span>
+                    <span>Manage alerts and expiry visibility</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="card-heading">
+                <h2>Login</h2>
+                <p>Enter your account details to continue.</p>
+            </div>
+
+            <form class="app-form" id="login-form">
+                <label class="field field-full">
+                    <span>Email</span>
+                        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                </label>
+
+                <label class="field field-full">
+                    <span>Password</span>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                </label>
+
+                <button type="submit" class="primary-btn">Login</button>
+            </form>
+
+            <div id="message" class="message" aria-live="polite"></div>
+            <p class="switch-link">
+                <a href="/forgot-password/">Forgot password?</a>
+            </p>
+            <div class="auth-divider"><span>Secure sign in</span></div>
+            <p class="switch-link">New here? <a href="/register/">Create an account</a></p>
+        </section>
+    </main>
+    <script src="../js/apiClient.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
