@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShelfLife | Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body class="auth-body">
+    <main class="auth-layout">
+        <section class="auth-panel auth-brand-panel">
+            <div class="brand-mark large-mark">
+                <img src="../assets/logo.svg" alt="ShelfLife logo">
+            </div>
+            <p class="section-tag">Get Started</p>
+            <h1 class="page-title">Create your account and organize food better</h1>
+            <p class="page-copy">Keep expiry dates, consumption notes, and alerts in one place so your kitchen stays calm.</p>
+            <div class="auth-feature-list">
+                <div class="auth-feature-card">
+                    <span class="auth-feature-dot"></span>
+                    <span>Track food by category and expiry date</span>
+                </div>
+                <div class="auth-feature-card">
+                    <span class="auth-feature-dot"></span>
+                    <span>Stay informed with visual status alerts</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="card-heading">
+                <h2>Register</h2>
+                <p>Create an account to manage your food inventory.</p>
+            </div>
+
+            <form class="app-form" id="register-form">
+                <label class="field field-full">
+                    <span>Name</span>
+                    <input type="text" id="register-name" name="name" placeholder="Enter your name" required>
+                </label>
+
+                <label class="field field-full">
+                    <span>Email</span>
+                    <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+                </label>
+
+                <label class="field">
+                    <span>Confirm Password</span>
+                    <input type="password" id="register-confirm-password" name="confirm_password" placeholder="Confirm password" required>
+                </label>
+
+                <button type="submit" class="primary-btn" href="/login/">Create account</button>
+            </form>
+
+            <div id="message" class="message" aria-live="polite"></div>
+            <div class="auth-divider"><span>Fast onboarding</span></div>
+            <p class="switch-link">Already have an account? <a href="/login/">Login</a></p>
+        </section>
+    </main>
+    <script src="../js/apiClient.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
